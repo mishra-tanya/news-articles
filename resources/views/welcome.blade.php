@@ -16,7 +16,7 @@
 
 <body>
     {{-- navbar --}}
-    <nav class="navbar navbar-expand-lg navbar-dark p-3 bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-light p-3 bg-light">
         <a class="navbar-brand" href="#">News Articles</a>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
@@ -47,33 +47,34 @@
         {{-- all articels --}}
         <h1 class="mt-5 mb-3 text-center" id="articles">News Articles</h1>
 <br>
-        <div class="row ">
-            <div class="col-md-3 col-5 mb-3">
-                {{-- for sorting news according to user's preference i.e. oldest or newest --}}
-                <form action="{{ route('news.index') }}" method="GET" class="mb-3">
-                    <select name="sort" id="sort" class="form-control mr-2" onchange="this.form.submit()">
-                        <option value="desc" {{ request()->query('sort') == 'desc' ? 'selected' : '' }}>Newest first
-                        </option>
-                        <option value="asc" {{ request()->query('sort') == 'asc' ? 'selected' : '' }}>Oldest first
-                        </option>
+<div class="row justify-content-center">
+    <div class="col-md-3 col-5 mb-3">
+        {{-- for sorting news according to user's preference i.e. oldest or newest --}}
+        <form action="{{ route('news.index') }}" method="GET" class="mb-3">
+            <select name="sort" id="sort" class="form-control mr-2" onchange="this.form.submit()">
+                <option value="desc" {{ request()->query('sort') == 'desc' ? 'selected' : '' }}>Newest first
+                </option>
+                <option value="asc" {{ request()->query('sort') == 'asc' ? 'selected' : '' }}>Oldest first
+                </option>
 
-                    </select>
-                </form>
-            </div>
+            </select>
+        </form>
+    </div>
 
-            <div class="col-md-3 col-5 mb-3">
-                {{-- searching news --}}
-                <form action="{{ route('news.index') }}" method="GET" class="mb-3 ">
-                    <div class="input-group">
-                        <input type="text" name="search" class="form-control" placeholder="Search articles"
-                            value="{{ request()->query('search') }}">
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-secondary" type="submit">Search</button>
-                        </div>
-                    </div>
-                </form>
+    <div class="col-md-3 col-5 mb-3">
+        {{-- searching news --}}
+        <form action="{{ route('news.index') }}" method="GET" class="mb-3 ">
+            <div class="input-group">
+                <input type="text" name="search" class="form-control" placeholder="Search articles"
+                    value="{{ request()->query('search') }}">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="submit">Search</button>
+                </div>
             </div>
-        </div>
+        </form>
+    </div>
+</div>
+
 
         <div class="table-responsive">
             <table class="table table-bordered">
