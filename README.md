@@ -17,20 +17,25 @@ Before you begin, ensure you have met the following requirements:
 
 Setup
 1. Clone the repository:
+
     git clone https://github.com/your-username/news-articles.git
     cd news-articles
 
 2. Install PHP dependencies:
+   
     composer install
 
 3. Create a copy of your .env file:
+   
     cp .env.example .env
 
 4. Set up your environment variables:
+   
     Open the .env file and configure your api and other settings.
     NEWS_API_URL=your_api_url
 
 5. Start the development server:
+   
     php artisan serve
 
 Your application should now be running on http://localhost:8000.
@@ -42,8 +47,10 @@ Your application should now be running on http://localhost:8000.
 
 ## Packages Used:
 - PHP Packages:
+  
     laravel/framework: 8.x
 
 - JavaScript Packages
+  
     bootstrap: 4.5.x (Frontend framework)
 
